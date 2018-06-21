@@ -53,7 +53,7 @@ ds<-ds%>%
 
 colnames(ds)<-gsub("mean","Mean",colnames(ds))
 colnames(ds)<-gsub("std","StandDev",colnames(ds))
-ds<-ds[,grepl("Mean|StanDev|SetType|Volunteer|Activity",colnames(ds))]
+ds<-ds[,grepl("Mean|StandDev|SetType|Volunteer|Activity",colnames(ds))]
 ds<-ds[,!grepl("MeanFreq",colnames(ds))]
 ds<-ds[,!grepl("angle",colnames(ds))]
 ## Relate Activiy detail with data set
