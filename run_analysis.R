@@ -55,7 +55,7 @@ colnames(ds)<-gsub("mean","Mean",colnames(ds))
 colnames(ds)<-gsub("std","StandDev",colnames(ds))
 ds<-ds[,grepl("Mean|StanDev|SetType|Volunteer|Activity",colnames(ds))]
 ds<-ds[,!grepl("MeanFreq",colnames(ds))]
-
+ds<-ds[,!grepl("angle",colnames(ds))]
 ## Relate Activiy detail with data set
 ds$Activity<-sapply(ds$Activity,function(x) ActivityLabels[[x,2]])
 
@@ -72,8 +72,7 @@ DesireNames<-gsub("BodyBody","Body",DesireNames)
 DesireNames<-gsub("Freq","",DesireNames)
 DesireNames<-gsub("^t","TimeDomain",DesireNames)
 DesireNames<-gsub("^f","FreqDomain",DesireNames)
-DesireNames<-gsub("anglet","angleTimeDomain",DesireNames)
-DesireNames<-gsub("angle","Angle",DesireNames)
+
 
 colnames(ds)<-DesireNames
 ###################################################
